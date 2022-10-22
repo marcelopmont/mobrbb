@@ -1,7 +1,7 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mobrbb/screens/components/rounded_button.dart';
+import 'package:mobrbb/screens/dice_screen.dart';
 import 'package:mobrbb/screens/personal_card_screen.dart';
 
 class MenuScreen extends StatelessWidget {
@@ -31,36 +31,25 @@ class MenuScreen extends StatelessWidget {
                 width: double.infinity,
                 height: 32,
               ),
-              SizedBox(
-                width: double.infinity,
-                child: InkWell(
-                  onTap: () {
-                    Navigator.pushNamed(context, PersonalCardScreen.id,
-                        arguments: PersonalCardScreenArguments(
-                          phone: '11 123456789',
-                          email: 'teste@testinho.com',
-                        ));
-                  },
-                  child: Material(
-                    borderRadius: BorderRadius.all(Radius.circular(1000)),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 32,
-                        vertical: 16,
-                      ),
-                      child: Center(
-                        child: Text(
-                          'Cartão pessoal',
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.teal,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
+              RoundedButton(
+                text: 'Cartão pessoal',
+                onPressed: () {
+                  Navigator.pushNamed(context, PersonalCardScreen.id,
+                      arguments: PersonalCardScreenArguments(
+                        phone: '11 123456789',
+                        email: 'teste@testinho.com',
+                      ));
+                },
+              ),
+              const SizedBox(height: 16),
+              RoundedButton(
+                text: 'Dado',
+                onPressed: () {
+                  Navigator.pushNamed(
+                    context,
+                    DiceScreen.id,
+                  );
+                },
               ),
             ],
           ),

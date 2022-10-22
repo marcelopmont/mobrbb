@@ -16,6 +16,9 @@ class PersonalCardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Cartão pessoal'),
+      ),
       backgroundColor: Colors.teal,
       body: SafeArea(
         child: Padding(

@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
+import 'package:mobrbb/screens/dice_screen.dart';
 import 'package:mobrbb/screens/menu_screen.dart';
 import 'package:mobrbb/screens/personal_card_screen.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.indigo,
       ),
       initialRoute: MenuScreen.id,
       routes: {
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
         PersonalCardScreen.id: (context) => PersonalCardScreen(
           arguments: ModalRoute.of(context)!.settings.arguments as PersonalCardScreenArguments,
         ),
+        DiceScreen.id: (context) => DiceScreen(),
       },
     );
   }
