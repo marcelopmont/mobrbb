@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobrbb/screens/dice_screen.dart';
 import 'package:mobrbb/screens/menu_screen.dart';
+import 'package:mobrbb/screens/movies_screen.dart';
 import 'package:mobrbb/screens/personal_card_screen.dart';
 import 'package:mobrbb/screens/quiz_complete_screen.dart';
 import 'package:mobrbb/screens/quiz_screen.dart';
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
               arguments: ModalRoute.of(context)!.settings.arguments
                   as QuizCompleteArguments,
             ),
+        MoviesScreen.id: (context) => MoviesScreen(),
       },
     );
   }

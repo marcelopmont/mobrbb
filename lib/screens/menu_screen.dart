@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobrbb/screens/components/rounded_button.dart';
 import 'package:mobrbb/screens/dice_screen.dart';
+import 'package:mobrbb/screens/movies_screen.dart';
 import 'package:mobrbb/screens/personal_card_screen.dart';
 import 'package:mobrbb/screens/quiz_screen.dart';
 
@@ -59,6 +60,16 @@ class MenuScreen extends StatelessWidget {
                   Navigator.pushNamed(
                     context,
                     QuizScreen.id,
+                  );
+                },
+              ),
+              const SizedBox(height: 16),
+              RoundedButton(
+                text: 'Lista de filmes',
+                onPressed: () {
+                  Navigator.pushNamed(
+                    context,
+                    MoviesScreen.id,
                   );
                 },
               ),
