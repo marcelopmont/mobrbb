@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:mobrbb/screens/components/rounded_button.dart';
 import 'package:mobrbb/screens/dice_screen.dart';
 import 'package:mobrbb/screens/personal_card_screen.dart';
+import 'package:mobrbb/screens/quiz_screen.dart';
 
 class MenuScreen extends StatelessWidget {
   static const String id = 'menu_screen';
@@ -48,6 +49,16 @@ class MenuScreen extends StatelessWidget {
                   Navigator.pushNamed(
                     context,
                     DiceScreen.id,
+                  );
+                },
+              ),
+              const SizedBox(height: 16),
+              RoundedButton(
+                text: 'Quiz',
+                onPressed: () {
+                  Navigator.pushNamed(
+                    context,
+                    QuizScreen.id,
                   );
                 },
               ),
