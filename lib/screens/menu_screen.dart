@@ -1,7 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobrbb/screens/components/rounded_button.dart';
 import 'package:mobrbb/screens/dice_screen.dart';
+import 'package:mobrbb/screens/login_screen.dart';
 import 'package:mobrbb/screens/movies_screen.dart';
 import 'package:mobrbb/screens/personal_card_screen.dart';
 import 'package:mobrbb/screens/quiz_screen.dart';
@@ -13,6 +15,7 @@ class MenuScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       backgroundColor: Colors.teal,
       body: SafeArea(
@@ -70,6 +73,17 @@ class MenuScreen extends StatelessWidget {
                   Navigator.pushNamed(
                     context,
                     MoviesScreen.id,
+                  );
+                },
+              ),
+              const SizedBox(height: 16),
+              RoundedButton(
+                text: 'Sair',
+                onPressed: () {
+                  FirebaseAuth.instance.signOut();
+                  Navigator.pushReplacementNamed(
+                    context,
+                    LoginScreen.id,
                   );
                 },
               ),
